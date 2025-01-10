@@ -1,0 +1,59 @@
+/* Contenedor principal de cada tarea */
+.TodoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .TodoItem:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para el botón de completado */
+  .TodoItem-Completed {
+    font-size: 1.2rem;
+    color: #4caf50;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: color 0.2s;
+  }
+  
+  .TodoItem-Completed:hover {
+    color: #388e3c;
+  }
+  
+  /* Estilo para el texto de la tarea */
+  .TodoItem-Text {
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    margin: 0;
+    transition: text-decoration 0.2s, color 0.2s;
+  }
+  
+  .TodoItem.completed .TodoItem-Text {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  /* Estilo para el botón de eliminación */
+  .TodoItem-Delete {
+    font-size: 1.2rem;
+    color: #f44336;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.2s;
+  }
+  
+  .TodoItem-Delete:hover {
+    color: #d32f2f;
+  }
+  

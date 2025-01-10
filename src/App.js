@@ -16,9 +16,13 @@ const defaultTodos = [
 
 function App() {
   return (
-    <React.Fragment>
+    <React.Fragment> {/*<React.Fragment> es una herramienta útil y limpia para estructurar tu aplicación React
+     sin introducir elementos HTML adicionales en el DOM. 
+     Si necesitas agrupar múltiples elementos en tu componente, 
+     considera usar React.Fragment o su sintaxis abreviada <> </>*/}
+     
       {/* Componente que muestra el contador de tareas completadas */}
-      <TodoCounter 
+      <TodoCounter  
         completed={16} // Número de tareas completadas.
         total={25} // Total de tareas disponibles.
       />
