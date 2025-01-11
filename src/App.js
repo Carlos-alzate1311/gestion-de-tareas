@@ -9,7 +9,7 @@ import { TodoSearch } from './component/TodoSearch';
 
 // Lista de tareas predeterminadas, que incluye texto y estado (completado o no).
 const defaultTodos = [
-  { text: "Cortar cebolla", completed: false },
+  { text: "Cortar cebolla", completed: true},
   { text: "tarea 1", completed: true },
   { text: "tarea 2", completed: false },
 ];
