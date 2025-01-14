@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 // Importamos los componentes necesarios para construir la interfaz.
 import { CreateTodoButton } from './component/CreateTodoButton';
 import { TodoCounter } from './component/TodoCounter';
@@ -12,9 +12,20 @@ const defaultTodos = [
   { text: "Cortar cebolla", completed: true},
   { text: "tarea 1", completed: true },
   { text: "tarea 2", completed: false },
+  {text: "tarea 3", completed: false}
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = 
+  React.useState('');
+
+  const  completedTodos = todos.filter(
+    todo => !!todo.completed
+  ).length;
+  const totalTodos= todos.length;
+
+  console.log("los usuarios buscan" + searchValue);
   return (
     <React.Fragment> {/*<React.Fragment> es una herramienta útil y limpia para estructurar tu aplicación React
      sin introducir elementos HTML adicionales en el DOM. 
@@ -23,12 +34,15 @@ function App() {
      
       {/* Componente que muestra el contador de tareas completadas */}
       <TodoCounter  
-        completed={16} // Número de tareas completadas.
-        total={25} // Total de tareas disponibles.
+        completed={completedTodos} // Número de tareas completadas.
+        total={totalTodos} // Total de tareas disponibles.
       />
 
       {/* Componente que permite buscar tareas */}
-      <TodoSearch />
+      <TodoSearch 
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      />
 
       {/* Lista de tareas */}
       <TodoList>
