@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React  from 'react';
 // Importamos los componentes necesarios para construir la interfaz.
 import { CreateTodoButton } from './component/CreateTodoButton';
 import { TodoCounter } from './component/TodoCounter';
@@ -25,6 +25,15 @@ function App() {
   ).length;
   const totalTodos= todos.length;
 
+  const searchedTodos = todos.filter(
+    (todo) => {
+    const todoText = todo.text.toLowerCase();
+    const searchText = searchValue.toLowerCase();
+    return todoText.includes(searchText);
+    
+    }
+  );
+
   console.log("los usuarios buscan" + searchValue);
   return (
     <React.Fragment> {/*<React.Fragment> es una herramienta útil y limpia para estructurar tu aplicación React
@@ -47,7 +56,7 @@ function App() {
       {/* Lista de tareas */}
       <TodoList>
         {/* Recorremos el array defaultTodos y generamos un TodoItem por cada tarea */}
-        {defaultTodos.map(todo => (
+        {searchedTodos.map(todo => (
           <TodoItem
             key={todo.text} // Clave única para cada elemento, necesaria en listas de React.
             text={todo.text} // Texto de la tarea.
