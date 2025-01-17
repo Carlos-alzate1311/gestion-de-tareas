@@ -34,7 +34,24 @@ function App() {
     }
   );
 
-  console.log("los usuarios buscan" + searchValue);
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
+  
   return (
     <React.Fragment> {/*<React.Fragment> es una herramienta útil y limpia para estructurar tu aplicación React
      sin introducir elementos HTML adicionales en el DOM. 
@@ -61,6 +78,8 @@ function App() {
             key={todo.text} // Clave única para cada elemento, necesaria en listas de React.
             text={todo.text} // Texto de la tarea.
             completed={todo.completed} // Estado de la tarea (true o false).
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() =>deleteTodo(todo.tex) }
           />
         ))}
       </TodoList>
