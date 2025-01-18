@@ -55,4 +55,9 @@
   .TodoItem-Delete:hover {
     transform: scale(1.2);
   }
+  .AiFillCheckCircle{ font-size:  40px; color:"green"} 
   
+  .CgCloseO{
+    font-size: 40px;
+    color: red;
+  }

@@ -79,7 +79,7 @@ function App() {
             text={todo.text} // Texto de la tarea.
             completed={todo.completed} // Estado de la tarea (true o false).
             onComplete={() => completeTodo(todo.text)}
-            onDelete={() =>deleteTodo(todo.tex) }
+            onDelete={() =>deleteTodo(todo.text) }
           />
         ))}
       </TodoList>

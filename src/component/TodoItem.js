@@ -1,5 +1,6 @@
 import '../styles/TodoItem.css';
-
+import { AiFillCheckCircle } from "react-icons/ai";
+import { CgCloseO } from "react-icons/cg";
 function TodoItem({ text, completed, onComplete, onDelete }) {
   return (
     <li className="TodoItem">
@@ -10,7 +11,8 @@ function TodoItem({ text, completed, onComplete, onDelete }) {
     aria-label="Marcar como completado"
     title="Marcar como completado"
   >
-    ✔
+    <AiFillCheckCircle className='AiFillCheckCircle'/>
+
   </button>
 
   {/* Texto de la tarea */}
@@ -25,7 +27,7 @@ function TodoItem({ text, completed, onComplete, onDelete }) {
     aria-label="Eliminar tarea"
     title="Eliminar tarea"
   >
-    ✖
+    <CgCloseO className='CgCloseO'/>
   </button>
 </li>
   );
