@@ -8,15 +8,30 @@ import { TodoList } from './component/TodoList';
 import { TodoSearch } from './component/TodoSearch';
 
 // Lista de tareas predeterminadas, que incluye texto y estado (completado o no).
-const defaultTodos = [
-  { text: "Cortar cebolla", completed: true},
-  { text: "tarea 1", completed: true },
-  { text: "tarea 2", completed: false },
-  {text: "tarea 3", completed: false}
-];
-
+//  const defaultTodos = [
+  //  { text: "Cortar cebolla", completed: true},
+  //  { text: "tarea 1", completed: true },
+  //  { text: "tarea 2", completed: false },
+  //  {text: "tarea 3", completed: false}
+ // ];
+ // localStorage.setItem('GESTOR_TAREAS_V1',JSON.stringify(defaulTodos));
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const localStorageTodos = localStorage.getItem(
+    'GESTOR_TAREAS_V1');
+
+    let parsedTodos;
+
+    if (!localStorageTodos) {
+      localStorage.setItem('GESTOR_TAREAS_V1',
+       JSON.stringify([]));
+      parsedTodos = [];
+    } else {
+      parsedTodos = JSON.parse(localStorageTodos);
+    }
+
+ 
+
+  const [todos, setTodos] = React.useState(parsedTodos);
   const [searchValue, setSearchValue] = 
   React.useState('');
 
@@ -34,13 +49,19 @@ function App() {
     }
   );
 
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('GESTOR_TAREAS_V1', 
+      JSON.stringify(newTodos));
+    setTodos(newTodos);
+  }
+
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
     );
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   const deleteTodo = (text) => {
@@ -49,7 +70,7 @@ function App() {
       (todo) => todo.text === text
     );
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
   
   return (
