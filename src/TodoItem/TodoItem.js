@@ -1,4 +1,4 @@
-import '../styles/TodoItem.css';
+import './TodoItem.css';
 import { AiFillCheckCircle } from "react-icons/ai";
 import { CgCloseO } from "react-icons/cg";
 function TodoItem({ text, completed, onComplete, onDelete }) {

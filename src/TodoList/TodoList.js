@@ -1,4 +1,4 @@
-import '../styles/TodoList.css';
+import './TodoList.css';
 
 // Definimos un componente funcional llamado `TodoList`.
 // Este componente sirve como contenedor para una lista de elementos.
