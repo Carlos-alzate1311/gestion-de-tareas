@@ -9,13 +9,16 @@ import { TodoSearch } from '../TodoSearch/TodoSearch';
 
 
 function AppUi ({
+    loading,
+    error,
     completedTodos,
     totalTodos,
     searchValue,
     setSearchValue,
     searchedTodos,
     completeTodo,
-    deleteTodo,
+    deleteTodo
+    
 
 }){
     return (
@@ -38,6 +41,11 @@ function AppUi ({
     
           {/* Lista de tareas */}
           <TodoList>
+          {loading && <p>Loading...</p>}
+          {error && <p> error!!</p>}
+          { (!loading && searchedTodos.length === 
+            0) && <p>Create your first task</p>}
+            
             {/* Recorremos el array defaultTodos y generamos un TodoItem por cada tarea */}
             {searchedTodos.map(todo => (
               <TodoItem
