@@ -2,10 +2,13 @@
 
 // Importamos los componentes necesarios para construir la interfaz.
 import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton';
+import { EmptyTodos } from '../EmptyTodos/EmptyTodos';
 import { TodoCounter } from '../TodoCounter/TodoCounter';
 import { TodoItem } from '../TodoItem/TodoItem';
 import { TodoList } from '../TodoList/TodoList';
 import { TodoSearch } from '../TodoSearch/TodoSearch';
+import { TodosError } from '../TodosError/TodosError';
+import { TodosLoading } from '../TodosLoading/TodosLoading';
 
 
 function AppUi ({
@@ -41,10 +44,16 @@ function AppUi ({
     
           {/* Lista de tareas */}
           <TodoList>
-          {loading && <p>Loading...</p>}
-          {error && <p> error!!</p>}
+          {loading && (
+            <>
+            <TodosLoading/>
+            <TodosLoading/>
+            <TodosLoading/>
+            </>
+            )}
+          {error && <TodosError/>}
           { (!loading && searchedTodos.length === 
-            0) && <p>Create your first task</p>}
+            0) && <EmptyTodos/>}
             
             {/* Recorremos el array defaultTodos y generamos un TodoItem por cada tarea */}
             {searchedTodos.map(todo => (
