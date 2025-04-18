@@ -1,6 +1,7 @@
 
 
 // Importamos los componentes necesarios para construir la interfaz.
+import React from 'react';
 import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton';
 import { EmptyTodos } from '../EmptyTodos/EmptyTodos';
 import { TodoContex } from '../TodoContext/TodoContext';
@@ -13,6 +14,14 @@ import { TodosLoading } from '../TodosLoading/TodosLoading';
 
 
 function AppUi (){
+
+  const {
+    loading,
+    error,
+    searchedTodos,
+    completeTodo,
+    deleteTodo
+  } = React.useContext(TodoContex)
     return (
         <> {/*<React.Fragment> es una herramienta útil y limpia para estructurar tu aplicación React sin introducir elementos HTML adicionales en el DOM. Si necesitas agrupar múltiples elementos en tu componente, considera usar React.Fragment o su sintaxis abreviada <> </>*/}
          
@@ -23,15 +32,9 @@ function AppUi (){
           <TodoSearch  />
 
 
-          <TodoContex.Consumer>
+          
           {/* Lista de tareas */}
-            { ({
-              loading,
-              error,
-              searchedTodos,
-              completeTodo,
-              deleteTodo
-            }) => (
+            { () => (
               <TodoList>
               {loading && (
                 <>
@@ -56,7 +59,7 @@ function AppUi (){
                 ))}
               </TodoList>
             )}
-          </TodoContex.Consumer>
+          
 
           {/* Botón para crear nuevas tareas */}
           <CreateTodoButton />
