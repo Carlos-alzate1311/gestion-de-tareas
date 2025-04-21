@@ -11,6 +11,7 @@ import { TodoList } from '../TodoList/TodoList';
 import { TodoSearch } from '../TodoSearch/TodoSearch';
 import { TodosError } from '../TodosError/TodosError';
 import { TodosLoading } from '../TodosLoading/TodosLoading';
+import { Modal } from '../Modal/Modal';
 
 
 function AppUi (){
@@ -20,21 +21,22 @@ function AppUi (){
     error,
     searchedTodos,
     completeTodo,
-    deleteTodo
+    deleteTodo,
+    openModal,
+    setOpenModal,
   } = React.useContext(TodoContex)
     return (
         <> {/*<React.Fragment> es una herramienta útil y limpia para estructurar tu aplicación React sin introducir elementos HTML adicionales en el DOM. Si necesitas agrupar múltiples elementos en tu componente, considera usar React.Fragment o su sintaxis abreviada <> </>*/}
          
           {/* Componente que muestra el contador de tareas completadas */}
           <TodoCounter />
-    
           {/* Componente que permite buscar tareas */}
           <TodoSearch  />
 
 
           
           {/* Lista de tareas */}
-            { () => (
+            {/* { () => ( */}
               <TodoList>
               {loading && (
                 <>
@@ -58,11 +60,19 @@ function AppUi (){
                   />
                 ))}
               </TodoList>
-            )}
+            {/* )} */}
           
 
           {/* Botón para crear nuevas tareas */}
-          <CreateTodoButton />
+          <CreateTodoButton
+           setOpenModal={setOpenModal} 
+           />
+           
+          {openModal && (
+            <Modal>
+            La funcionalidad de agregar TAREAS
+          </Modal>
+          )}
           
         </>  
       );

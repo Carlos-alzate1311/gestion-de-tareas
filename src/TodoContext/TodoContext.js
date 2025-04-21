@@ -10,9 +10,13 @@ function TodoProvider({ children }){
         saveItem: saveTodos,
         loading,
         error,
+        
        } = useLocalStorage('GESTOR_TAREAS_V1', []);
       const [searchValue, setSearchValue] = 
       React.useState('');
+
+      const [openModal, setOpenModal] =
+      React.useState(true);
     
       const  completedTodos = todos.filter(
         todo => !!todo.completed
@@ -71,11 +75,13 @@ function TodoProvider({ children }){
           setSearchValue,
           searchedTodos,
           completeTodo,
-          deleteTodo
+          deleteTodo,
+          openModal,
+          setOpenModal, 
         }}>
           {children}
         </TodoContex.Provider>
     )
 }
 
-export {TodoContex, TodoProvider }
+export {TodoContex, TodoProvider };
