@@ -16,7 +16,7 @@ function TodoProvider({ children }){
       React.useState('');
 
       const [openModal, setOpenModal] =
-      React.useState(true);
+      React.useState(false);
     
       const  completedTodos = todos.filter(
         todo => !!todo.completed
@@ -46,6 +46,14 @@ function TodoProvider({ children }){
     
       
     
+      const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+          text,
+          completed: false,
+        });
+        saveTodos(newTodos);
+      }
       const completeTodo = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex(
@@ -78,6 +86,7 @@ function TodoProvider({ children }){
           deleteTodo,
           openModal,
           setOpenModal, 
+          addTodo
         }}>
           {children}
         </TodoContex.Provider>

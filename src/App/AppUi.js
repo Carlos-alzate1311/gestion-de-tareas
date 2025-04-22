@@ -12,6 +12,7 @@ import { TodoSearch } from '../TodoSearch/TodoSearch';
 import { TodosError } from '../TodosError/TodosError';
 import { TodosLoading } from '../TodosLoading/TodosLoading';
 import { Modal } from '../Modal/Modal';
+import { TodoForm } from '../TodoForm/TodoForm';
 
 
 function AppUi (){
@@ -67,11 +68,12 @@ function AppUi (){
           <CreateTodoButton
            setOpenModal={setOpenModal} 
            />
-           
+
           {openModal && (
             <Modal>
-            La funcionalidad de agregar TAREAS
-          </Modal>
+            <TodoForm/>
+
+            </Modal>
           )}
           
         </>  
