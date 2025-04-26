@@ -16,12 +16,73 @@
   }
   
   /* Clásico/Elegante */
-  .TodoList {
+  /* .TodoList {
     list-style: square;
     padding: 10px;
     margin: 0;
     border: 1px solid #3498db;
     border-radius: 8px;
     font-family: 'Courier New', monospace;
-  }
+  } */
   
+  .TodoList {
+  list-style: none; /* Removemos los estilos de lista predeterminados */
+  padding: 0; /* Eliminamos el padding para un mejor control del espaciado */
+  margin: 0;
+  border: none; /* Eliminamos el borde directo del contenedor de la lista */
+  border-radius: 0; /* Eliminamos el border-radius del contenedor */
+  font-family: 'Roboto', sans-serif; /* Fuente más legible y moderna */
+  color: #555; /* Un color de texto un poco más suave */
+}
+
+.TodoList-item {
+  background-color: #fff; /* Fondo blanco para cada item */
+  padding: 15px;
+  margin-bottom: 8px; /* Espacio entre los items */
+  border-left: 5px solid #3498db; /* Indicador visual a la izquierda */
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05); /* Sombra sutil para levantar los items */
+  display: flex; /* Para alinear elementos dentro de cada item */
+  align-items: center; /* Centrar verticalmente los elementos */
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.TodoList-item:last-child {
+  margin-bottom: 0; /* Eliminar el margen inferior del último item */
+}
+
+.TodoList-item:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.01); /* Ligeramente más grande al pasar el ratón */
+}
+
+.TodoList-item__checkbox {
+  margin-right: 15px;
+}
+
+.TodoList-item__text {
+  flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+.TodoList-item__delete-button {
+  background: none;
+  color: #e74c3c; /* Color rojo para el botón de eliminar */
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none;
+  margin-left: 15px;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.TodoList-item__delete-button:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
+
+.TodoList--empty {
+  padding: 20px;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}

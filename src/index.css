@@ -13,24 +13,42 @@ code {
     monospace;
 } */
 
-/* Fondo general de la aplicación */
 body {
-  background: linear-gradient(135deg, #f4f4f4, #e8eaf6); /* Degradado en tonos suaves */
-  background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); /* Patrón elegante */
-  color: #333; /* Color de texto para buen contraste */
+  /* Degradado suave y sutilmente animado */
+  background: linear-gradient(135deg, #f0f2f5, #e1e6ed); /* Tonos aún más suaves */
+  background-size: 200% 200%;
+  animation: subtleGradient 15s ease infinite; /* Animación más lenta */
+
+  /* Patrón muy tenue para añadir textura sin distraer */
+  background-image: url('https://www.transparenttextures.com/patterns/light-gray-tile.png'); /* Un patrón más discreto */
+  background-blend-mode: overlay; /* Combina el degradado y el patrón sutilmente */
+  opacity: 0.95; /* Ligeramente menos opaco para que sea más tenue */
+
+  color: #333; /* Color de texto para buen contraste (sin cambios aquí) */
   margin: 0;
-  font-family: 'Roboto', 'Arial', sans-serif; /* Fuente moderna y profesional */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
   font-size: 16px;
   line-height: 1.6;
+  overflow-x: hidden; /* Evita barras de desplazamiento horizontales innecesarias */
 }
 
-/* Opcional: Centramos todo el contenido */
+@keyframes subtleGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Centrado del contenido con mejor espaciado en pantallas grandes */
 #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Centramos desde la parte superior para contenido extenso */
   min-height: 100vh;
-  padding: 20px;
+  padding: 30px; /* Aumentamos un poco el padding general */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1200px; /* Ancho máximo para evitar que el contenido se estire demasiado en pantallas grandes */
+  margin: 0 auto; /* Centra horizontalmente el contenedor en pantallas grandes */
 }
 

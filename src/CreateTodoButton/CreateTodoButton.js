@@ -1,8 +1,5 @@
 import './CreateTodoButton.css';
 
-
-
-
 function CreateTodoButton ({setOpenModal}){
     return(
 
@@ -18,7 +15,7 @@ function CreateTodoButton ({setOpenModal}){
              }
         //  }
          }
-         >+</button>
+         >Agregar</button>
     );
 }
 

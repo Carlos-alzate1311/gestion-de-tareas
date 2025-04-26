@@ -18,7 +18,7 @@
   }
   
   /* Clásico/Elegante */
-  .TodoSearch {
+  /* .TodoSearch {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
@@ -26,5 +26,31 @@
     border-radius: 5px;
     font-family: 'Times New Roman', serif;
     color: #2c3e50;
+  } */
+  
+  .TodoSearch {
+    width: 100%;
+    padding: 16px; /* Ligeramente más padding vertical para equilibrio */
+    font-size: 1.15rem; /* Un poco más grande para mayor claridad */
+    border: 1px solid #ccc; /* Borde más sutil por defecto */
+    border-radius: 10px; /* Bordes un poco más redondeados para un look moderno */
+    font-family: 'Nunito', sans-serif; /* Otra fuente sans-serif moderna y amigable */
+    color: #333;
+    box-sizing: border-box;
+    margin-bottom: 25px; /* Un poco más de margen inferior para separación */
+    background-color: #fff; /* Fondo blanco explícito */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Sombra suave por defecto */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
   
+  .TodoSearch::placeholder {
+    color: #999; /* Color del placeholder un poco más oscuro para mejor contraste inicial */
+    font-style: italic;
+    opacity: 0.8; /* Ligeramente menos prominente */
+  }
+  
+  .TodoSearch:focus {
+    outline: none;
+    border-color: #007bff; /* Un azul акцент más estándar para el foco */
+    box-shadow: 0 0 7px rgba(0, 123, 255, 0.3); /* Sombra más notable al enfocar */
+  }

@@ -1,5 +1,5 @@
 /* TodoItem.css */
-.TodoItem {
+/* .TodoItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,4 +60,82 @@
   .CgCloseO{
     font-size: 40px;
     color: red;
+  } */
+
+  .TodoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px; /* Un poco más de padding para respirar */
+    border: 1px solid #ddd; /* Borde más sutil */
+    border-radius: 6px; /* Bordes ligeramente menos pronunciados */
+    background-color: #fff;
+    margin-bottom: 8px; /* Un poco menos de margen inferior */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Sombra muy suave para elevación */
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+  }
+  
+  .TodoItem:hover {
+    background-color: #f5f5f5; /* Un gris muy claro al pasar el ratón */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligeramente más marcada al hacer hover */
+    transform: scale(1.01); /* Sutil efecto de elevación al hacer hover */
+  }
+  
+  .TodoItem-Complete {
+    font-size: 1.5rem; /* Icono un poco más grande */
+    color: #5cb85c; /* Verde más moderno */
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Evita el outline predeterminado al enfocar */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .TodoItem-Complete.completed {
+    color: #aaa; /* Gris más suave para completado */
+  }
+  
+  .TodoItem-Complete:hover {
+    transform: scale(1.15); /* Un poco menos de escala al hacer hover */
+  }
+  
+  .TodoItem-Text {
+    flex: 1;
+    margin: 0 15px; /* Un poco más de margen a los lados del texto */
+    font-size: 1rem;
+    color: #333; /* Color de texto principal más oscuro */
+  }
+  
+  .TodoItem-Text--completed {
+    text-decoration: line-through;
+    color: #999; /* Gris más claro para el texto tachado */
+  }
+  
+  .TodoItem-Delete {
+    font-size: 1.5rem; /* Icono un poco más grande */
+    color: #d9534f; /* Rojo más moderno */
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Evita el outline predeterminado al enfocar */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .TodoItem-Delete:hover {
+    transform: scale(1.15); /* Un poco menos de escala al hacer hover */
+    color: #c9302c; /* Ligeramente más oscuro al hacer hover */
+  }
+  
+  .AiFillCheckCircle {
+    font-size: 2rem; /* Ajusté el tamaño para consistencia */
+    color: #5cb85c; /* Usando el mismo verde moderno */
+  }
+  
+  .AiFillCheckCircle.completed {
+    color: #aaa; /* Usando el mismo gris suave para completado */
+  }
+  
+  .CgCloseO {
+    font-size: 2rem; /* Ajusté el tamaño para consistencia */
+    color: #d9534f; /* Usando el mismo rojo moderno */
   }

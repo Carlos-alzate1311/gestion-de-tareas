@@ -1,38 +1,36 @@
 /* Minimalista */
 .CreateTodoButton {
-    /* font-size: 1.5rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer; */
-    background-color: #61DAFA;
-  box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+  background-color: #007bff; /* Azul акцент principal */
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px 25px;
   border: none;
-  border-radius: 50%;
+  border-radius: 50px; /* Forma de píldora */
   cursor: pointer;
-  font-size: 50px;
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  outline: none; /* Elimina el outline predeterminado al enfocar */
   font-weight: bold;
-  color: #FAFAFA;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 64px;
-  width: 64px;
-  z-index: 1;
+  position: fixed; /* Para fijarlo en una esquina */
+  bottom: 20px;
+  right: 20px;
+  z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
 
-  transform: rotate(0);
-  transition: .3s ease;
-  }
-  
-  .CreateTodoButton:hover {
-    transform: rotate(224deg);
-  }
+.CreateTodoButton:hover {
+  background-color: #0056b3; /* Azul акцент más oscuro al hacer hover */
+  transform: translateY(-2px); /* Ligeramente hacia arriba al hacer hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.CreateTodoButton:active {
+  transform: translateY(0); /* Vuelve a su posición original al hacer clic */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra original al hacer clic */
+}
+
+.CreateTodoButton:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Sombra de foco sutil */
+}
   /* Colorido/Moderno
   .create-todo-button {
     font-size: 1.8rem;
