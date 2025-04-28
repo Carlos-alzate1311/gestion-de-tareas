@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/gestion-de-tareas/static/css/main.7779023a.css",
-    "main.js": "/gestion-de-tareas/static/js/main.b68da6f5.js",
+    "main.js": "/gestion-de-tareas/static/js/main.efbbed1e.js",
     "index.html": "/gestion-de-tareas/index.html",
     "main.7779023a.css.map": "/gestion-de-tareas/static/css/main.7779023a.css.map",
-    "main.b68da6f5.js.map": "/gestion-de-tareas/static/js/main.b68da6f5.js.map"
+    "main.efbbed1e.js.map": "/gestion-de-tareas/static/js/main.efbbed1e.js.map"
   },
   "entrypoints": [
     "static/css/main.7779023a.css",
-    "static/js/main.b68da6f5.js"
+    "static/js/main.efbbed1e.js"
   ]
 }
